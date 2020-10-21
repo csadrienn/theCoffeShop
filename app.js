@@ -34,8 +34,7 @@ function animate() {
         start: start,
       },
       x: xMovement,
-      opacity: 0,
-      duration: 2,
+      duration: 1,
       ease: ease,
     });
   });
@@ -60,7 +59,7 @@ function animate() {
       toggleActions: toggleActions,
       start: start,
     },
-    yPercent: 7,
+    yPercent: 8,
     opacity: 0,
     duration: 1,
     ease: ease,
