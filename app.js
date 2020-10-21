@@ -23,30 +23,27 @@ function animate() {
     .from("#hero .wrapper .btn", { y: wrapperHeight, opacity: 0 }, "-=0.8");
 
   //selection animation
-  const selectionTexts = document.querySelectorAll(".cards .card-text .text-wrapper");
+  const selectionTexts = document.querySelectorAll(".cards .card-text");
   selectionTexts.forEach(cardText => {
-    const subtitle = cardText.querySelector(".subtitle");
+    const subtitleCover = cardText.querySelector(".subtitle-cover");
     const par = cardText.querySelector("p");
-    const yPercent = cardText.parentElement.classList.contains("text2") ? 100 : -100;
+    const origin = cardText.classList.contains("text2") ? "left" : "right";
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: cardText,
         toggleActions: toggleActions,
         start: start,
       },
-      defaults: { duration: 0.6, ease: ease },
+      defaults: { duration: 1, ease: ease },
     });
 
-    tl.from(subtitle, {
-      xPercent: yPercent,
-      duration: 1,
-      ease: ease,
+    tl.to(subtitleCover, {
+      scaleX: 0,
+      transformOrigin: origin,
     }).from(
       par,
       {
         opacity: 0,
-        duration: 1,
-        ease: ease,
       },
       "-=0.3"
     );

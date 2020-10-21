@@ -56,8 +56,21 @@
       padding: 2rem;
       overflow: hidden;
 
-      .subtitle {
-        margin: 2rem 0;
+      .subtitle-wrapper {
+        position: relative;
+
+        .subtitle {
+          margin: 2rem 0;
+        }
+
+        .subtitle-cover {
+          background-color: $letter-cr-light;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          bottom: 0;
+        }
       }
     }
 
