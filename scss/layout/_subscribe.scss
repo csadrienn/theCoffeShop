@@ -1,0 +1,33 @@
+#subscribe {
+  padding: 2.5rem 1rem;
+  width: 100%;
+  background: $base-cr-light-cold;
+  border-top: 3px solid $primary-cr;
+  border-bottom: 3px solid $primary-cr;
+
+  .input-wrapper {
+    @include flexbox(stretch, center, row);
+    width: 100%;
+  }
+  .subscribe-input {
+    min-width: 20rem;
+    border-right: none;
+
+    &:focus {
+      border-right: none;
+    }
+  }
+
+  .subtitle,
+  p {
+    text-align: center;
+  }
+
+  .subtitle {
+    margin-bottom: 2rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,46 @@
+#hero {
+  min-height: 92vh;
+  width: 100%;
+  @include flexbox(flex-start);
+  padding-left: 8%;
+  background: $base-cr-dark url("../img/hero.jpg") no-repeat right top;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 3rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+  }
+
+  .logo-wrapper {
+    overflow: hidden;
+  }
+
+  .logo {
+    height: 5rem;
+    fill: $letter-cr-light;
+    stroke: $letter-cr-light;
+    margin: 3rem 0;
+  }
+  .wrapper {
+    width: 100%;
+    overflow: hidden;
+
+    .hero-subtitle {
+      color: $letter-cr-light;
+      margin: 3rem 0;
+    }
+
+    .btn {
+      margin: 1rem 0;
+    }
+  }
+}

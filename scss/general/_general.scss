@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  overflow: hidden;
+}
+
+input,
+textarea {
+  font-size: 1.125rem;
+  padding: 0.6rem 1rem;
+  border: 2px solid $base-cr-medium;
+
+  &:focus {
+    outline: none;
+    border: 2px solid $letter-cr-medium;
+  }
+}
+
+// mixins
+
+@mixin flexbox($align: center, $justify: center, $direction: column) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}

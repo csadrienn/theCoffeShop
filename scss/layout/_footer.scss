@@ -1,0 +1,76 @@
+footer {
+  margin-top: 5rem;
+  padding: 2rem 0;
+  background-color: $base-cr-dark;
+
+  .card-grid {
+    row-gap: 1rem;
+    padding: 0 1rem;
+
+    .title {
+      color: $letter-cr-light;
+      grid-column: 2/5;
+      justify-self: center;
+      margin-bottom: 1rem;
+
+      &::before {
+        background: $letter-cr-light;
+      }
+    }
+    p {
+      color: $letter-cr-light;
+      font-size: 1.125rem;
+    }
+
+    .card {
+      border: 5px solid $letter-cr-light;
+      padding: 1.7rem;
+    }
+    .card-m {
+      grid-column: 2/3;
+      grid-row: 2/4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .text-wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .left-text,
+      .right-text {
+        display: inline-block;
+        margin: 0.5rem 0;
+        min-width: 10rem;
+      }
+
+      .left-text {
+        text-align: left;
+      }
+
+      .right-text {
+        text-align: right;
+      }
+    }
+
+    .address-wrapper {
+      grid-column: 4/5;
+      grid-row: 2/3;
+      text-align: center;
+    }
+
+    .card-s {
+      grid-column: 4/5;
+      grid-row: 3/4;
+      @include flexbox(center, center, row);
+
+      img {
+        height: 2.5rem;
+        margin: 0.5rem 1rem;
+      }
+    }
+  }
+}
