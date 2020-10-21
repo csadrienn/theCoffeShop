@@ -25,18 +25,31 @@ function animate() {
   //selection animation
   const selectionTexts = document.querySelectorAll(".cards .card-text .text-wrapper");
   selectionTexts.forEach(cardText => {
-    const cardWidth = cardText.parentElement.clientWidth;
-    const xMovement = cardText.parentElement.classList.contains("text2") ? cardWidth : -cardWidth;
-    gsap.from(cardText, {
+    const subtitle = cardText.querySelector(".subtitle");
+    const par = cardText.querySelector("p");
+    const yPercent = cardText.parentElement.classList.contains("text2") ? 100 : -100;
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: cardText,
         toggleActions: toggleActions,
         start: start,
       },
-      x: xMovement,
+      defaults: { duration: 0.6, ease: ease },
+    });
+
+    tl.from(subtitle, {
+      xPercent: yPercent,
       duration: 1,
       ease: ease,
-    });
+    }).from(
+      par,
+      {
+        opacity: 0,
+        duration: 1,
+        ease: ease,
+      },
+      "-=0.3"
+    );
   });
 
   //scroll back button visibility
